@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OpenWrt luci feed
 
 ## Description
@@ -32,3 +33,6 @@ See [LICENSE](LICENSE) file.
 ## Package Guidelines
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) file.
+=======
+# luci
+>>>>>>> 5a1271b245df9e71dfb18bd8f9a12476b1a849bd
