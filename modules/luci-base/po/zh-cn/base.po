@@ -1075,7 +1075,8 @@ msgid "Enabled"
 msgstr "启用"
 
 msgid "Enables IGMP snooping on this bridge"
-msgstr ""
+msgstr "在此网桥上启用IGMP侦听"
+
 
 msgid ""
 "Enables fast roaming among access points that belong to the same Mobility "
@@ -1127,6 +1128,9 @@ msgstr "租用地址的到期时间，最短 2 分钟（<code>2m</code>）。"
 
 msgid "External"
 msgstr "外部"
+
+msgid "NAS"
+msgstr "存储"
 
 msgid "External R0 Key Holder List"
 msgstr "外部 <abbr title=\"R0 Key Holder\">R0KH</abbr> 列表"
@@ -2984,7 +2988,7 @@ msgid "Source routing"
 msgstr "源路由"
 
 msgid "Internet"
-msgstr "互联网"
+msgstr "外网"
 
 msgid "Specifies the directory the device is attached to"
 msgstr "指定设备的挂载目录"
