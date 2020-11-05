@@ -70,7 +70,8 @@ PKG_VERSION?=$(if $(DUMP),x,$(strip $(shell \
 PKG_GITBRANCH?=$(if $(DUMP),x,$(strip $(shell \
 	variant="LuCI"; \
 	if git log -1 >/dev/null 2>/dev/null; then \
-		branch="openwrt-18.06"; \
+		branch="$$(git branch --remote --verbose --no-abbrev --contains 2>/dev/null | \
+			sed -rne 's|^[^/]+/([^ ]+) [a-f0-9]{40} .+$$|\1|p' | head -n1)"; \
 		if [ "$$branch" != "master" ]; then \
 			variant="LuCI $$branch branch"; \
 		else \
@@ -109,7 +110,7 @@ ifeq ($(PKG_NAME),luci-base)
  define Package/luci-base/config
    config LUCI_SRCDIET
 	bool "Minify Lua sources"
-	default y
+	default n
 
    menu "Translations"$(foreach lang,$(LUCI_LANGUAGES),
 
