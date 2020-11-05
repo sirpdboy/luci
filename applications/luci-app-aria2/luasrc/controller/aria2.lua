@@ -1,43 +1,39 @@
---[[
-LuCI - Lua Configuration Interface - aria2 support
-
-Copyright 2014-2015 nanpuyue <nanpuyue@gmail.com>
-Modified by kuoruan <kuoruan@gmail.com>
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-	http://www.apache.org/licenses/LICENSE-2.0
-]]--
-
-module("luci.controller.aria2", package.seeall)
+module("luci.controller.aria2",package.seeall)
+local ucic = luci.model.uci.cursor()
+local http = require "luci.http"
+local util = require "luci.util"
 
 function index()
-	if not nixio.fs.access("/etc/config/aria2") then
-		return
-	end
-
-	local page = entry({"admin", "services", "aria2"}, cbi("aria2"), _("Aria2 Settings"))
-	page.dependent = true
-
-	entry({"admin", "services", "aria2", "status"}, call("status")).leaf = true
-
+	if not nixio.fs.access("/etc/config/aria2")then return end
+	entry({"admin","nas","aria2"},firstchild(),_("Aria2")).dependent=false
+	entry({"admin","nas","aria2","config"},cbi("aria2/config"),_("Configuration"),1)
+	entry({"admin","nas","aria2","file"},form("aria2/files"),_("Files"),2)
+	entry({"admin","nas","aria2","log"},firstchild(),_("Log"),3)
+	entry({"admin","nas","aria2","log","view"},template("aria2/log_template"))
+	entry({"admin","nas","aria2","log","read"},call("action_log_read"))
+	entry({"admin", "nas", "aria2", "clear_log"}, call("clear_log")).leaf = true
+	entry({"admin","nas","aria2","status"},call("action_status"))
 end
 
-function status()
-	local sys  = require "luci.sys"
-	local ipkg = require "luci.model.ipkg"
-	local http = require "luci.http"
-	local uci  = require "luci.model.uci".cursor()
+function action_status()
+local t={
+running=(luci.sys.call("pidof aria2c >/dev/null")==0)
+}
+http.prepare_content("application/json")
+http.write_json(t)
+end
 
-	local status = {
-		running = (sys.call("pidof aria2c > /dev/null") == 0),
-		yaaw = ipkg.installed("yaaw"),
-		webui = ipkg.installed("webui-aria2"),
-		ariang = (ipkg.installed("ariang") or ipkg.installed("ariang-nginx"))
-	}
+function clear_log()
+	luci.sys.call("cat > /var/log/aria2_1.log")
+end
 
+function action_log_read()
+	local t={log="",syslog=""}
+	local o=ucic:get("aria2","main","log")or"/var/log/aria2.log"
+		if nixio.fs.access(o) then
+		t.log=util.trim(luci.sys.exec("tail -n 50 %s | sed 'x;1!H;$!d;x'"%o))
+		end
+	t.syslog=util.trim(luci.sys.exec("[ -f '/var/log/aria2_1.log' ] && cat /var/log/aria2_1.log"))
 	http.prepare_content("application/json")
-	http.write_json(status)
+	http.write_json(t)
 end

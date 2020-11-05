@@ -1075,8 +1075,7 @@ msgid "Enabled"
 msgstr "启用"
 
 msgid "Enables IGMP snooping on this bridge"
-msgstr "在此网桥上启用IGMP侦听"
-
+msgstr ""
 
 msgid ""
 "Enables fast roaming among access points that belong to the same Mobility "
@@ -1128,9 +1127,6 @@ msgstr "租用地址的到期时间，最短 2 分钟（<code>2m</code>）。"
 
 msgid "External"
 msgstr "外部"
-
-msgid "NAS"
-msgstr "存储"
 
 msgid "External R0 Key Holder List"
 msgstr "外部 <abbr title=\"R0 Key Holder\">R0KH</abbr> 列表"
@@ -2987,9 +2983,6 @@ msgstr "源地址"
 msgid "Source routing"
 msgstr "源路由"
 
-msgid "Internet"
-msgstr "外网"
-
 msgid "Specifies the directory the device is attached to"
 msgstr "指定设备的挂载目录"
 
@@ -4080,143 +4073,5 @@ msgstr "启用 256-QAM"
 msgid "802.11n 2.4Ghz Only"
 msgstr "只适合 802.11n 2.4Ghz"
 
-msgid "A KMS Serever Emulator to active your Windows or Office"
-msgstr "KMS服务器，用于激活Windows或Office"
-
-msgid "Nps is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet."
-msgstr "Nps 是一种快速反向代理，可帮助您将 NAT 或防火墙后面的本地服务器公开到 Internet。"
-
-msgid "Delay command runing for wait till your drivers online. Only work in start mode(/etc/init.d/cifs start)"
-msgstr "延迟命令等待运行，直到驱动程序联机。 仅在启动模式下工作（/etc/init.d/cifs start）"
-
-msgid "Create log file for this SQM instance under /var/run/sqm/${Interface_name}.debug.log. Make sure to delete log files manually."
-msgstr "在/var/run/sqm/${Interface_name}.debug.log下为此SQM实例创建日志文件。 确保手动删除日志文件。"
-
-msgid "MWAN Interfaces"
-msgstr "MWAN 接口"
-
-msgid "Model"
-msgstr "主机型号"
-
-msgid "udpxy is a UDP-to-HTTP multicast traffic relay daemon, here you can configure the settings."
-msgstr "udpxy是UDP到HTTP的多播流量中继守护程序，您可以在此处配置设置。"
-
-msgid "Buffer size"
-msgstr "缓冲区大小"
-
-msgid "Buffer messages"
-msgstr "缓冲区消息"
-
-msgid "Buffer time"
-msgstr "缓冲时间"
-
-msgid "Bind IP/Interface"
-msgstr "绑定IP /接口"
-
-msgid "Source IP/Interface"
-msgstr "源IP /接口"
-
-msgid "Multicast subscription renew"
-msgstr "组播订阅续订"
-
-msgid "Nice increment"
-msgstr "优先级增量"
-
-msgid "Notification"
-msgstr "通知"
-
-msgid "GFWList"
-msgstr "GFW列表"
-
-msgid "For further information check the online documentation"
-msgstr "有关更多信息，请参见在线文档"
-
-msgid "Download Utility"
-msgstr "下载工具"
-
-msgid "List of supported and fully pre-configured download utilities."
-msgstr "受支持和完全预先配置的下载实用程序列表。"
-
-msgid "List of available network interfaces. Usually the startup will be triggered by the 'wan' interface"
-msgstr "可用网络接口列表。通常，启动将由“ wan”界面触发。"
-
-msgid "For SSL protected blocklist sources you need a suitable SSL library, e.g. 'libustream-ssl' or 'built-in'."
-msgstr "对于受SSL保护的阻止列表来源，您需要合适的SSL库，例如“ libustream-ssl”或“内置”。"
-
-msgid "Overall Domains"
-msgstr "整体领域"
-
-msgid "Caution: To prevent OOM exceptions on low memory devices with less than 64 MB free RAM, please only select a few of them!"
-msgstr "为防止可用内存少于64 MB的低内存设备出现OOM异常，请仅选择其中几个！"
-
-msgid "Categories"
-msgstr "分类目录"
-
-msgid "Enable memory intense overall sort / duplicate removal on low memory devices (&lt; 64 MB free RAM)"
-msgstr "在低内存设备上启用密集的内存整体排序/重复删除（小于64 MB的可用RAM）"
-
-msgid "Create compressed blocklist backups, they will be used in case of download errors or during startup in backup mode."
-msgstr "创建压缩的阻止列表备份，将在下载错误或在备份模式下启动期间使用它们。"
-
-msgid "Size of the download queue to handle downloads &amp; list processing in parallel (default '4')."
-msgstr "下载队列的大小，用于并行处理下载和列表处理（默认为“ 4”）。"
-
-msgid "For further performance improvements you can raise this value, e.g. '8' or '16' should be safe."
-msgstr "为了进一步提高性能，您可以提高此值，例如'8'或'16'应该是安全的。"
-
-msgid "Builds an additional 'Jail' list (/tmp/adb_list.jail) to block access to all domains except those listed in the whitelist file."
-msgstr "构建一个附加的“监狱”列表（/tmp/adb_list.jail），以阻止对除白名单文件中列出的域之外的所有域的访问。"
-
-msgid "You can use this restrictive blocklist manually e.g. for guest wifi or kidsafe configurations."
-msgstr "您可以手动使用此限制性阻止列表，例如用于访客wifi或kidsafe配置。"
-
-msgid "Flush DNS Cache after adblock processing."
-msgstr "adblock处理后刷新DNS缓存。"
-
-msgid "Send notification emails in case of a processing error or if domain count is ≤ 0."
-msgstr "如果发生处理错误或域计数≤0，请发送通知电子邮件。"
-
-msgid "Please note: this needs additional 'msmtp' package installation and setup."
-msgstr "请注意：这需要额外的“ msmtp”软件包安装和设置。"
-
-msgid "Max. Download Queue"
-msgstr "最高下载队列"
-
-msgid "'Jail' Blocklist Creation"
-msgstr "监狱的黑名单创建"
-
-msgid "Flush DNS Cache"
-msgstr "刷新DNS缓存"
-
-msgid "Email Notification"
-msgstr "电子邮件通知"
-
-msgid "Respawn"
-msgstr "刷新"
-
-msgid "GFWlist"
-msgstr "GFW列表"
-
-msgid "LOG"
-msgstr "日志"
-
-msgid "VPN Client"
-msgstr "VPN 客户端"
-
-msgid "VPN Bridge"
-msgstr "VPN 网桥"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+msgid "Use as Docker data (/opt/docker)"
+msgstr "作为 Docker 数据分区使用 (/opt/docker)"

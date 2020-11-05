@@ -11,9 +11,9 @@
 
 <p>关闭您正在使用设备的电源</p>
 
-<%- local c = require("luci.model.uci").cursor():changes(); if c and next(c) then -%>
-	<p class="alert-message warning">警告：对于不支持关机的设备，关机可能会导致重新启动.</p>
-<%- end -%>
+
+<p class="alert-message warning">警告：对于不支持关机的设备，关机可能会导致重新启动.</p>
+
 
 <hr />
 
@@ -38,7 +38,7 @@
 		img.onerror = check;
 		img.src = '<%=resource%>/icons/loading.gif?' + Math.random();
 
-		document.getElementById('reboot-message').innerHTML = '完成关机,请检查电源，对于某些设备可能关机并未切断电源。';
+		document.getElementById('reboot-message').innerHTML = '设备关机完成';
 	}
 
 	function reboot(button) {
