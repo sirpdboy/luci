@@ -2,7 +2,6 @@
 
 PATTERN=$1
 SCM=
-
 [ -d .svn ] && SCM="svn"
 git=$( which git 2>/dev/null )
 [ "$git" ] && "$git" status >/dev/null && SCM="git"
