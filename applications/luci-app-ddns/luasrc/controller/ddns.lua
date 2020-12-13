@@ -228,9 +228,6 @@ local function _get_status()
 			command = command .. [[ -- get_registered_ip]]
 			reg_ip = SYS.exec(command)
 		end
-		if reg_ip == "" then
-			reg_ip = "_nodata_"
-		end
 
 		-- fill transfer array
 		data[#data+1]	= {
